@@ -43,8 +43,7 @@ const loadCommands = () => {
 
 loadCommands();
 bans.initialize();
-checkBans.compareBannedUsers();
-updateCheck.initializeUpdateCheck(api, 'YOUR_THREAD_ID'); 
+checkBans.compareBannedUsers(); 
 
 global.getCommands = () => commands;
 global.getPrefix = () => prefix;
