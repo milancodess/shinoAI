@@ -8,6 +8,8 @@ const colors = require('colors/safe');
 const cors = require("cors");
 const bans = require('./bans/codename');
 const checkBans = require('./bans/checkBans');
+const updateCheck = require('./updateCheck'); 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -42,6 +44,7 @@ const loadCommands = () => {
 loadCommands();
 bans.initialize();
 checkBans.compareBannedUsers();
+updateCheck.initializeUpdateCheck(api, 'YOUR_THREAD_ID'); 
 
 global.getCommands = () => commands;
 global.getPrefix = () => prefix;
